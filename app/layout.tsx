@@ -7,32 +7,112 @@ import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://homsbyspl.com"
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
+
   title: {
-    default: "Homsbyspl – Stay Like You Live There",
+    default: "Homsbyspl – Premium Shortlet Apartments in Abuja",
     template: "%s | Homsbyspl",
   },
   description:
-    "Premium furnished shortlet apartments across Nigeria. Flexible stays, all utilities included, instant booking. Your home away from home.",
+    "Book premium furnished shortlet apartments in Abuja — Jabi, Maitama, Wuse II, Asokoro and more. All utilities included, instant booking, flexible stays from 1 night to 6 months.",
+
   keywords: [
-    "shortlet", "furnished apartment", "short stay", "Abuja shortlet",
-    "Lagos shortlet", "Nigeria furnished apartment", "homsbyspl",
+    "shortlet Abuja",
+    "furnished apartment Abuja",
+    "short stay Abuja",
+    "Jabi shortlet",
+    "Maitama shortlet",
+    "Wuse II shortlet",
+    "Asokoro shortlet",
+    "Abuja serviced apartment",
+    "homsbyspl",
+    "shortlet FCT",
+    "furnished flat Abuja",
+    "short term rental Abuja",
   ],
-  openGraph: {
-    title: "Homsbyspl – Stay Like You Live There",
-    description: "Premium furnished shortlet apartments. Flexible stays, instant booking.",
-    type: "website",
-    siteName: "Homsbyspl",
+
+  authors: [{ name: "Homsbyspl" }],
+  creator: "Homsbyspl",
+  publisher: "Homsbyspl",
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
+
+  openGraph: {
+    title: "Homsbyspl – Premium Shortlet Apartments in Abuja",
+    description:
+      "Furnished shortlet apartments in Jabi, Maitama, Wuse II & Asokoro. Instant booking, all utilities included.",
+    url: BASE_URL,
+    siteName: "Homsbyspl",
+    type: "website",
+    locale: "en_NG",
+  },
+
   twitter: {
     card: "summary_large_image",
-    title: "Homsbyspl – Stay Like You Live There",
+    title: "Homsbyspl – Premium Shortlet Apartments in Abuja",
+    description:
+      "Furnished shortlet apartments in Jabi, Maitama & more. Instant booking, all utilities included.",
   },
+
+  alternates: {
+    canonical: BASE_URL,
+  },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  name: "Homsbyspl",
+  description:
+    "Premium furnished shortlet apartments in Abuja. Flexible stays, all utilities included, instant booking.",
+  url: BASE_URL,
+  telephone: "+2348000000000",
+  email: "hello@homsbyspl.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Jabi",
+    addressLocality: "Abuja",
+    addressRegion: "Federal Capital Territory",
+    addressCountry: "NG",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 9.0765,
+    longitude: 7.3986,
+  },
+  priceRange: "₦₦–₦₦₦",
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "WiFi", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Air conditioning", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Fully equipped kitchen", value: true },
+  ],
+  areaServed: [
+    { "@type": "City", name: "Abuja" },
+  ],
+  sameAs: [],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body>
         <Navbar />
         <main>{children}</main>

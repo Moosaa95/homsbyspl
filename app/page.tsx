@@ -38,19 +38,19 @@ const TRUST = [
 ]
 
 const AREAS = [
-  { name: "Maitama", city: "Abuja", color: "from-emerald-500 to-teal-600", emoji: "🏛️" },
-  { name: "Victoria Island", city: "Lagos", color: "from-blue-500 to-indigo-600", emoji: "🌊" },
-  { name: "Wuse II", city: "Abuja", color: "from-violet-500 to-purple-600", emoji: "🏢" },
-  { name: "Lekki", city: "Lagos", color: "from-amber-500 to-orange-600", emoji: "🌴" },
-  { name: "GRA", city: "Port Harcourt", color: "from-green-500 to-emerald-700", emoji: "🌿" },
-  { name: "Asokoro", city: "Abuja", color: "from-rose-500 to-pink-600", emoji: "🏡" },
+  { name: "Jabi", city: "Abuja", color: "from-emerald-500 to-teal-600", emoji: "🏡" },
+  { name: "Maitama", city: "Abuja", color: "from-violet-500 to-purple-600", emoji: "🏛️" },
+  { name: "Wuse II", city: "Abuja", color: "from-blue-500 to-indigo-600", emoji: "🏢" },
+  { name: "Asokoro", city: "Abuja", color: "from-rose-500 to-pink-600", emoji: "🌿" },
+  { name: "Gwarinpa", city: "Abuja", color: "from-amber-500 to-orange-600", emoji: "🌳" },
+  { name: "Garki", city: "Abuja", color: "from-green-500 to-emerald-700", emoji: "🏙️" },
 ]
 
 const TESTIMONIALS = [
   {
     name: "Adaeze O.",
-    role: "Marketing Manager · Lagos",
-    text: "I was sceptical at first — I'd had bad experiences with shortlets before. The apartment in Maitama was spotless, the WiFi was fast, and the team was genuinely helpful. Booked twice more since then.",
+    role: "Marketing Manager · Abuja",
+    text: "I was sceptical at first — I'd had bad experiences with shortlets before. The apartment in Jabi was spotless, the WiFi was fast, and the team was genuinely helpful. Booked twice more since then.",
     initials: "AO",
     bg: "bg-emerald-100",
     color: "text-emerald-700",
@@ -66,7 +66,7 @@ const TESTIMONIALS = [
   {
     name: "Funmi A.",
     role: "Returning from the UK",
-    text: "We needed somewhere to land while our place was being set up. Homsbyspl had options that felt like a real home — not a hotel with a tiny kitchenette. The 2-bedroom in Wuse II was perfect.",
+    text: "We needed somewhere to land while our place was being set up. Homsbyspl had options that felt like a real home — not a hotel with a tiny kitchenette. The 2-bedroom in Maitama was perfect.",
     initials: "FA",
     bg: "bg-blue-100",
     color: "text-blue-700",
@@ -152,7 +152,7 @@ export default function HomePage() {
             >
               <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-pulse shrink-0" />
               <span className="text-white/80 text-xs sm:text-sm font-medium">
-                Available in Abuja · Lagos · Port Harcourt
+                Available in Abuja · Jabi · Maitama & more
               </span>
             </motion.div>
 
@@ -212,7 +212,7 @@ export default function HomePage() {
               transition={{ delay: 0.5 }}
               className="flex flex-wrap gap-2"
             >
-              {["Abuja", "Wuse II", "Maitama", "Lekki", "Victoria Island"].map((loc) => (
+              {["Jabi", "Maitama", "Wuse II", "Asokoro", "Gwarinpa"].map((loc) => (
                 <button
                   key={loc}
                   type="button"
@@ -516,8 +516,8 @@ export default function HomePage() {
       <section className="py-16 sm:py-20 bg-stone-50">
         <div className="max-w-6xl mx-auto px-5 sm:px-6">
           <motion.div variants={up} initial="hidden" whileInView="show" viewport={{ once: true }} className="text-center mb-10">
-            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">We&rsquo;re Everywhere</p>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#403D3D]">Popular destinations</h2>
+            <p className="text-xs font-bold text-emerald-600 uppercase tracking-widest mb-3">Across Abuja</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-[#403D3D]">Popular neighbourhoods</h2>
           </motion.div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
