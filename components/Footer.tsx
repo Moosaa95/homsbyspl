@@ -85,7 +85,7 @@ export default function Footer() {
             <ul className="space-y-4 text-sm">
               <li className="flex items-start gap-3">
                 <MapPin className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span className="text-white/50 leading-relaxed">Abuja, Federal Capital Territory, Nigeria</span>
+                <span className="text-white/50 leading-relaxed">Jabi, Abuja, Federal Capital Territory, Nigeria</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
